@@ -10,9 +10,17 @@ import Header from './components/Header'
 import DetailedInfo from './components/DetailedInfo'
 
 function App() {
-  const [drink,setDrink] = useState(Drinks.cocktails[2])
-  const detailedInfo = () => {
-    console.log("hejhej")
+  const [drink,setDrink] = useState()
+  const detailedInfo = (drink) => {
+    const currentDrinkName = drink.innerHTML
+    Drinks.cocktails.map((drink,index) => {
+      if (drink.name===currentDrinkName) {
+        setDrink(Drinks.cocktails[index])
+        
+      }
+      return ''
+    })
+    
   }
   return (
     <BrowserRouter>

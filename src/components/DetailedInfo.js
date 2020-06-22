@@ -1,7 +1,8 @@
 import React from 'react'
 
 const DetailedInfo = (drink) => {
-    return <div><p>{drink.drink.name}</p>
+    return <div><h2>{drink.drink.name}</h2>
+    <p>{drink.drink.preparation}</p>
 <img src={drink.drink.image} alt={drink.drink.name}/></div>
 }
 export default DetailedInfo
