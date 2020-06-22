@@ -15,7 +15,7 @@ const Explorer = ({ onHandleClick }) => {
         setNoHitsText('')
         let drinkFound = false
         Drinks.cocktails.map((drink) => {
-            
+
             if (drink.name.includes(input)) {
                 setSearchHits(hits => hits.concat(drink))
                 drinkFound = true
@@ -33,12 +33,11 @@ const Explorer = ({ onHandleClick }) => {
 
     return <div className='explorerCard'>
         <h1>{mainTextToUser}</h1>
-
         <input value={input} onChange={e => setInput(e.target.value)} />
         <button onClick={searchDrink}>Search</button>
         {noHitsText}
         <div className='gridOfDrinks'>
-        <DisplayingHits  results={searchHits} onHandleClick={onHandleClick} />
+            <DisplayingHits results={searchHits} onHandleClick={onHandleClick} />
         </div>
     </div>
 }
