@@ -1,0 +1,9 @@
+.navBar {
+text-align: center;
+display: grid;
+grid-template-columns: auto auto;
+
+}
+a {
+    text-decoration: none;
+}

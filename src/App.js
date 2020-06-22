@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState} from 'react'
-import './App.css';
+import './styling/App.css';
 import Drinks from "./data/drinks.json";
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Explorer from './components/Explorer'

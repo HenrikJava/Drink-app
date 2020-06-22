@@ -1,0 +1,12 @@
+.explorerCard {
+    text-align: center;
+}
+h1 {
+    font-size: 5vw;
+    color: green;
+
+}
+.gridOfDrinks {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
