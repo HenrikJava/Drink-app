@@ -6,15 +6,16 @@ import DisplayingHits from './DisplayingHits'
 
 const Explorer = ({ onHandleClick }) => {
     const [input, setInput] = useState('')
-    const [searchHits, setSearchHits] = useState([Drinks.cocktails[2]])
-
+    const [searchHits, setSearchHits] = useState([])
+    const [noHitsText, setNoHitsText] = useState([])
     const searchDrink = () => {
-
-        Drinks.cocktails.map((drink, index) => {
-
+        setNoHitsText('')
+        let drinkFound = false
+        Drinks.cocktails.map((drink) => {
+            
             if (drink.name.includes(input)) {
                 setSearchHits(hits => hits.concat(drink))
-
+                drinkFound = true
             }
             else {
 
@@ -23,6 +24,7 @@ const Explorer = ({ onHandleClick }) => {
 
 
         })
+        !drinkFound && setNoHitsText(<h2>Tyvärr hittades ingen drink, vänligen försök igen</h2>)
     }
 
     return <div>
@@ -30,6 +32,7 @@ const Explorer = ({ onHandleClick }) => {
 
         <input value={input} onChange={e => setInput(e.target.value)} />
         <button onClick={searchDrink}>Search</button>
+        {noHitsText}
         <DisplayingHits results={searchHits} onHandleClick={onHandleClick} />
 
     </div>
