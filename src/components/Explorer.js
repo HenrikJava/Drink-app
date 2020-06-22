@@ -4,9 +4,9 @@ import Drinks from "../data/drinks.json";
 import DisplayingHits from './DisplayingHits'
 
 
-const Explorer = () => {
+const Explorer = ({onHandleClick}) => {
     const [input, setInput] = useState('')
-    const [searchHits, setSearchHits] = useState([2,2,23])
+    const [searchHits, setSearchHits] = useState([Drinks.cocktails[1],Drinks.cocktails[2],Drinks.cocktails[3]])
 
     const searchDrink = () => {
         Drinks.cocktails.map((drink) => {
@@ -19,12 +19,13 @@ const Explorer = () => {
         })
 
     }
+    
     return <div>
     <h1>Find your favourite drink</h1>
     
     <input value={input} onChange={e => setInput(e.target.value)}/>
     <button onClick={searchDrink}>Search</button>
-    <DisplayingHits results={searchHits}/>
+    <DisplayingHits results={searchHits} onHandleClick={onHandleClick}/>
     
     </div>
 }

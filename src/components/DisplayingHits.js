@@ -1,9 +1,10 @@
 import React from 'react'
 import DrinkCard from './DrinkCard'
 
-const DisplayingHits = ({results}) =>  { return (
+const DisplayingHits = ({results, onHandleClick}) =>  { 
+    return (
 results.map((drink) => {
-    return (<DrinkCard/>)
+    return (<DrinkCard name={drink.name} image={drink.image} onHandleClick={onHandleClick}/>)
 })
 )}
 export default DisplayingHits
